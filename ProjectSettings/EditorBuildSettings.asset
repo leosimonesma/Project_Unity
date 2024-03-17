@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/SCN_MainMenu.unity
+    guid: 57868d1887bd30e49af16cad2b48ce58
+  - enabled: 1
+    path: Assets/Scenes/SCN_TestRayCast.unity
+    guid: 13eb85ac423b99143a97622c2d2b7187
   m_configObjects: {}
