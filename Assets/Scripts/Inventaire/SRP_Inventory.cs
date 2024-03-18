@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,31 @@ public class SRP_Inventory : MonoBehaviour
 
     private void Start() {
         Inv_Reset(Ingredient_Inventory);
+    }
+
+    private void Update() {
+
+        if (Input.GetKeyDown(KeyCode.Keypad1)){
+
+            Inv_Reset(Ingredient_Inventory);
+
+        } else if (Input.GetKeyDown(KeyCode.Keypad2)) {
+
+            int _random = UnityEngine.Random.Range(1, 10);
+
+            Inv_Add(_random, Ingredient_Inventory);
+
+        } else if (Input.GetKeyDown(KeyCode.Keypad3)) {
+
+            Inv_Full(Ingredient_Inventory);
+
+        } else if (Input.GetKeyDown(KeyCode.Keypad4)) {
+
+            Inv_Manual_Check(Ingredient_Inventory);
+
+        } else if (Input.GetKeyDown(KeyCode.Keypad5)) {
+
+        }
     }
 
     // vide l'inventaire (remet toute les valeur a 0).

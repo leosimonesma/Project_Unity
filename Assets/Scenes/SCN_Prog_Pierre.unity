@@ -132,10 +132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573855424}
+  - component: {fileID: 573855425}
   - component: {fileID: 573855423}
   - component: {fileID: 573855422}
   - component: {fileID: 573855421}
-  - component: {fileID: 573855425}
   m_Layer: 0
   m_Name: Obj_TestDummy
   m_TagString: Untagged
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed6786abed3b2643bfac454dd8c8795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ingredient_Inventory: 000000000000000000000000000000000000000000000000
+  Ingredient_Inventory: 010000000100000000000000000000000000000000000000
 --- !u!1 &989244570
 GameObject:
   m_ObjectHideFlags: 0
