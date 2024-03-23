@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 2d15e83ac15ab1c439896511e0631eaf
+guid: 46636fa7b0c925f47bd7f81161bbba38
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristaux
+    second: {fileID: 2100000, guid: 3ff4a72d63540ed44a6bc2c8ad37093b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1

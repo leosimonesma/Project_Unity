@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4916507332168393286}
   - component: {fileID: 2085797688712874697}
   m_Layer: 0
-  m_Name: FX_Flamme
+  m_Name: FX_FlammeBougie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
