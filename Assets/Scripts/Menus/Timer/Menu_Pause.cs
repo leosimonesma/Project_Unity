@@ -44,14 +44,14 @@ public class Menu_Pause : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
-        Debug.Log("Main  Menu!!!");
+        SceneManager.LoadScene("SCN_MainMenu");
+        
     }
 
     public void QuiGame()
     {
 
-        Debug.Log("Quite Game !!!");
+      
         Application.Quit();
 
     }

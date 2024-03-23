@@ -8,14 +8,18 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField] float StartTime = 0f;
-    [SerializeField] float CurrentTime = 10f;
+    [SerializeField] float CurrentTime = 99f;
+    [SerializeField] float StartingTime = 99f;
     [SerializeField] TextMeshProUGUI countdownText;
     public Timer_test JeSuisDansUnAutreScript_Test;
+    public AffichageScores AffichageScores;
     bool stopTime = false;
+    public GameObject TimerUI;
 
     // Start is called before the first frame update
     void Start()
     {
+        CurrentTime = StartingTime;
         StartTime = CurrentTime;
     }
 
@@ -49,7 +53,7 @@ public class Timer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("je freez");
+           
             stopTime = true;
 
 
@@ -64,8 +68,8 @@ public class Timer : MonoBehaviour
     }
     void EndGame()
     {
-
-        Debug.Log("fin de la partie");
+        AffichageScores.Affichage_Scores();
+        TimerUI.SetActive(false);
 
     }
 }
