@@ -61,6 +61,9 @@ public class SRP_Inventory : MonoBehaviour
     }
 
     public void SuperCombo_Reset (int[] SuperCombo) {
+
+        Inv_Reset(SuperCombo);
+
         for (int i = 0; i < SuperCombo.Length; i++)
         {
             int _random = UnityEngine.Random.Range(1, 10);
@@ -135,7 +138,7 @@ public class SRP_Inventory : MonoBehaviour
 
     public int Inv_SuperCombo_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
 
-        int SuperCombo = 1;
+        int SuperCombo = 7;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo1[i])
                 SuperCombo = 0;
@@ -144,7 +147,7 @@ public class SRP_Inventory : MonoBehaviour
             return SuperCombo;
         }
 
-        SuperCombo = 2;
+        SuperCombo = 8;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo2[i])
                 SuperCombo = 0;
@@ -154,7 +157,7 @@ public class SRP_Inventory : MonoBehaviour
         }
 
 
-        SuperCombo = 3;
+        SuperCombo = 9;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo3[i])
                 SuperCombo = 0;
@@ -164,7 +167,7 @@ public class SRP_Inventory : MonoBehaviour
         }
 
 
-        SuperCombo = 4;
+        SuperCombo = 10;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo4[i])
                 SuperCombo = 0;
@@ -174,7 +177,7 @@ public class SRP_Inventory : MonoBehaviour
         }
 
 
-        SuperCombo = 5;
+        SuperCombo = 11;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo5[i])
                 SuperCombo = 0;
@@ -184,7 +187,7 @@ public class SRP_Inventory : MonoBehaviour
         }
 
 
-        SuperCombo = 6;
+        SuperCombo = 12;
         for (int i = 0; i < target.Length; i++) {
             if (target[i] != SuperCombo6[i])
                 SuperCombo = 0;
