@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,8 +10,17 @@ public class SRP_Inventory : MonoBehaviour
 
     [SerializeField] int[] Ingredient_Inventory = new int[5];
 
+    [SerializeField] int[] SuperCombo_1 = new int[5];
+    [SerializeField] int[] SuperCombo_2 = new int[5];
+    [SerializeField] int[] SuperCombo_3 = new int[5];
+    [SerializeField] int[] SuperCombo_4 = new int[5];
+    [SerializeField] int[] SuperCombo_5 = new int[5];
+    [SerializeField] int[] SuperCombo_6 = new int[5];
+
     private void Start() {
+
         Inv_Reset(Ingredient_Inventory);
+        SuperCombo_All_Reset(SuperCombo_1,SuperCombo_2,SuperCombo_3,SuperCombo_4,SuperCombo_5,SuperCombo_6);
     }
 
     private void Update() {
@@ -31,10 +41,30 @@ public class SRP_Inventory : MonoBehaviour
 
         } else if (Input.GetKeyDown(KeyCode.Keypad4)) {
 
-            Inv_Manual_Check(Ingredient_Inventory);
+            Inv_Manual_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6) ;
 
         } else if (Input.GetKeyDown(KeyCode.Keypad5)) {
 
+            Debug.Log("Super combo = " + Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6));
+        }
+    }
+
+    public void SuperCombo_All_Reset(int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
+
+        SuperCombo_Reset(SuperCombo1);
+        SuperCombo_Reset(SuperCombo2);
+        SuperCombo_Reset(SuperCombo3);
+        SuperCombo_Reset(SuperCombo4);
+        SuperCombo_Reset(SuperCombo5);
+        SuperCombo_Reset(SuperCombo6);
+
+    }
+
+    public void SuperCombo_Reset (int[] SuperCombo) {
+        for (int i = 0; i < SuperCombo.Length; i++)
+        {
+            int _random = UnityEngine.Random.Range(1, 10);
+            Inv_Add(_random, SuperCombo);
         }
     }
 
@@ -78,21 +108,93 @@ public class SRP_Inventory : MonoBehaviour
     }
 
     //verification de l'inventaire automatique, ne s'efectue que si celuis ci est plein, on verifit alors les combo puis on le vide.
-    public void Inv_Check(int[] target) {
+    public void Inv_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
 
         if (Inv_Full(target)) {
 
-            Debug.Log(Inv_Combo_Check(target));
+            if (Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6) == 0) {
+
+                Inv_Combo_Check(target);
+            }
+
             Inv_Reset(target);
 
         }
     }
 
     //verification de l'inventaire Manuelle, on verifit les combo et on le vide.
-    public void Inv_Manual_Check(int[] target) {
+    public void Inv_Manual_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
 
-        Debug.Log(Inv_Combo_Check(target));
+        if (Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6) == 0)
+        {
+            Inv_Combo_Check(target);
+        }
+
         Inv_Reset(target);
+    }
+
+    public int Inv_SuperCombo_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
+
+        int SuperCombo = 1;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo1[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 1) {
+            return SuperCombo;
+        }
+
+        SuperCombo = 2;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo2[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 2) {
+            return SuperCombo;
+        }
+
+
+        SuperCombo = 3;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo3[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 3) {
+            return SuperCombo;
+        }
+
+
+        SuperCombo = 4;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo4[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 4) {
+            return SuperCombo;
+        }
+
+
+        SuperCombo = 5;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo5[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 5) {
+            return SuperCombo;
+        }
+
+
+        SuperCombo = 6;
+        for (int i = 0; i < target.Length; i++) {
+            if (target[i] != SuperCombo6[i])
+                SuperCombo = 0;
+        }
+        if (SuperCombo == 6) {
+            return SuperCombo;
+        }
+
+
+        return SuperCombo;
     }
 
 
@@ -238,6 +340,8 @@ public class SRP_Inventory : MonoBehaviour
             return combo;
         }
     }
+
+    
 
 }
 
