@@ -31,7 +31,7 @@ public class SRP_Inventory : MonoBehaviour
 
         } else if (Input.GetKeyDown(KeyCode.Keypad2)) {
 
-            int _random = UnityEngine.Random.Range(1, 10);
+            int _random = UnityEngine.Random.Range(1, 11);
 
             Inv_Add(_random, Ingredient_Inventory);
 
@@ -66,7 +66,7 @@ public class SRP_Inventory : MonoBehaviour
 
         for (int i = 0; i < SuperCombo.Length; i++)
         {
-            int _random = UnityEngine.Random.Range(1, 10);
+            int _random = UnityEngine.Random.Range(1, 11);
             Inv_Add(_random, SuperCombo);
         }
     }
