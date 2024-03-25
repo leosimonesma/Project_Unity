@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ingredient_Burrito
+  - Ingredient_Champi
+  - Ingredient_Poussiere
+  - Ingredient_DentDrake
+  - Ingredient_CoeurGolem
+  - Ingredient_OeilCyclope
+  - Ingredient_Sablier
+  - Ingredient_Cristaux
+  - Ingredient_PotionVerte
+  - Ingredient_PotionViolette
   layers:
   - Default
   - TransparentFX
