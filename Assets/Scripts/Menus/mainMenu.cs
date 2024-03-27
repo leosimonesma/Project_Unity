@@ -7,7 +7,7 @@ public class mainMenu : MonoBehaviour
 {
     public void ButtonPlay()
     {
-        SceneManager.LoadScene("SCN_TestRayCast");
+        SceneManager.LoadScene("SCN_InGame");
     }
 
     public void QuitGame()

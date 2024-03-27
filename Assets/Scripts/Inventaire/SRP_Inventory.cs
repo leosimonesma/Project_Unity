@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class SRP_Inventory : MonoBehaviour
 {
+
+    [SerializeField] int Score = 0;
 
     [SerializeField] int[] Ingredient_Inventory = new int[5];
 
@@ -39,7 +42,7 @@ public class SRP_Inventory : MonoBehaviour
 
         } else if (Input.GetKeyDown(KeyCode.Keypad3)) {
 
-            Inv_Full(Ingredient_Inventory);
+            Debug.Log(Score);
 
         } else if (Input.GetKeyDown(KeyCode.Keypad4)) {
 
@@ -131,26 +134,126 @@ public class SRP_Inventory : MonoBehaviour
     public void Inv_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
 
         if (Inv_Full(target)) {
+            int Combo = Inv_SuperCombo_Check(target, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6);
 
-            if (Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6) == 0) {
-
-                Inv_Combo_Check(target);
+            if (Combo == 0)
+            {
+                Combo = Inv_Combo_Check(target);
+        
             }
+                switch (Combo)
+                {
+                    case 1:
+                        Score = Score + 100;
+                        break;
 
-            Inv_Reset(target);
+                    case 2:
+                        Score = Score + 200;
+                        break;
+                    case 3:
+                        Score = Score + 300;
+                        break;
+                    case 4:
+                        Score = Score + 400;
+                        break;
+                    case 5:
+                        Score = Score + 500;
+                        break;
+                    case 6:
+                        Score = Score + 600;
+                        break;
+
+                    case 7:
+                        Score = Score + 1000;
+                        break;
+
+                    case 8:
+                        Score = Score + 2000;
+                        break;
+                    case 9:
+                        Score = Score + 3000;
+                        break;
+                    case 10:
+                        Score = Score + 4000;
+                        break;
+                    case 11:
+                        Score = Score + 5000;
+                        break;
+                    case 12:
+                        Score = Score + 6000;
+                        break;
+                    default:
+                        Debug.Log(Score);
+                        break;
+
+                }
+
+                Inv_Reset(target);
+            
 
         }
     }
 
     //verification de l'inventaire Manuelle, on verifit les combo et on le vide.
     public void Inv_Manual_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
+        int Combo = Inv_SuperCombo_Check(target, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6);
 
-        if (Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6) == 0)
+        if (Combo == 0)
         {
-            Inv_Combo_Check(target);
+            Combo = Inv_Combo_Check(target);
+
+        }
+        switch (Combo)
+        {
+            case 1:
+                Score = Score + 100;
+                break;
+
+            case 2:
+                Score = Score + 200;
+                break;
+            case 3:
+                Score = Score + 300;
+                break;
+            case 4:
+                Score = Score + 400;
+                break;
+            case 5:
+                Score = Score + 500;
+                break;
+            case 6:
+                Score = Score + 600;
+                break;
+
+            case 7:
+                Score = Score + 1000;
+                break;
+
+            case 8:
+                Score = Score + 2000;
+                break;
+            case 9:
+                Score = Score + 3000;
+                break;
+            case 10:
+                Score = Score + 4000;
+                break;
+            case 11:
+                Score = Score + 5000;
+                break;
+            case 12:
+                Score = Score + 6000;
+                break;
+            default:
+                Debug.Log(Score);
+                break;
+
         }
 
         Inv_Reset(target);
+
+
+    
     }
 
     public int Inv_SuperCombo_Check(int[] target, int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
@@ -213,8 +316,8 @@ public class SRP_Inventory : MonoBehaviour
             return SuperCombo;
         }
 
-
         return SuperCombo;
+
     }
 
 
@@ -359,6 +462,8 @@ public class SRP_Inventory : MonoBehaviour
             combo = 0;
             return combo;
         }
+
+       
     }
 
     
