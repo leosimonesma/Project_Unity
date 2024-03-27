@@ -17,6 +17,8 @@ public class SRP_Inventory : MonoBehaviour
     [SerializeField] int[] SuperCombo_5 = new int[5];
     [SerializeField] int[] SuperCombo_6 = new int[5];
 
+    string[] ingredientTags = { "Ingredient_Burrito", "Ingredient_Champi", "Ingredient_Poussiere", "Ingredient_DentDrake", "Ingredient_CoeurGolem", "Ingredient_OeilCyclope", "Ingredient_Sablier", "Ingredient_Cristaux", "Ingredient_PotionVerte", "Ingredient_PotionViolette" };
+
     private void Start() {
 
         Inv_Reset(Ingredient_Inventory);
@@ -82,6 +84,21 @@ public class SRP_Inventory : MonoBehaviour
     }
 
     // ajoute la valeur 'set' a la premier case vide rencontrer (vide = 0).
+
+
+    /********************************************************************************************************************************************************************/
+    public void inv_call(string ingerdiant) {
+
+        for (int i = 0; i < ingredientTags.Length ; i++) {
+            
+            if (ingredientTags[i] == ingerdiant) {
+                Inv_Add(i+1, Ingredient_Inventory);
+            }
+
+        }
+
+    }
+
     public bool Inv_Add(int set, int[] target) {
 
         for (int i = 0; i < target.Length; i++) {
