@@ -35,7 +35,7 @@ public class Menu_Pause : MonoBehaviour
         GameIsPaused = false;
     }
     // fonction pour mettre en pause et afficher le menu
-    void Pause()
+    public void Pause()
     {
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
