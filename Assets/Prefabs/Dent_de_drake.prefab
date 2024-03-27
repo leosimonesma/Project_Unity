@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 38.549263
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 38.549263
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 38.549263
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
@@ -73,6 +73,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 616f49b828e65eb4fa0648aa13101ecb,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 616f49b828e65eb4fa0648aa13101ecb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
       propertyPath: m_Name
@@ -86,6 +96,11 @@ PrefabInstance:
     - target: {fileID: 3451118302482216456, guid: 616f49b828e65eb4fa0648aa13101ecb,
         type: 3}
       propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 616f49b828e65eb4fa0648aa13101ecb,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3451118302482216456, guid: 616f49b828e65eb4fa0648aa13101ecb,
@@ -156,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253252f58418332418a3ef1c2166bfea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 4
+  startSpeed: 1.2
 --- !u!114 &-2855176440753916093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +184,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc4ec903ce4df4fb4cb1dd564938ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathTime: 5
+  invisibleTime: 1
