@@ -41,7 +41,6 @@ public class Spawner : MonoBehaviour
         {
             case 1:
                 return Ingredient_01;
-
             case 2:
                 return Ingredient_02;
             case 3:

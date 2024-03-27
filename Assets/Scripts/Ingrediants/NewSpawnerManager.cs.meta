@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 6b060577bb76ef54dbd9738d857e8db8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Ingredient_01: {fileID: 7373500243014726100, guid: f21825cf5fa39594a928c8b6f86ceeef,
+      type: 3}
+  - Ingredient_02: {fileID: 5208331691978931819, guid: 59800099bb725464d86f08c00b511b25,
+      type: 3}
+  - Ingredient_03: {fileID: 8845981206686601392, guid: d4fdec5e245435f4da934e23f29153b8,
+      type: 3}
+  - Ingredient_04: {fileID: 6693482158310835189, guid: c9bfe143f6b637141b7c95962fe4bbc9,
+      type: 3}
+  - Ingredient_05: {fileID: 6976864121525438295, guid: ace280ff9e395bc4abc0a1e8c35a8790,
+      type: 3}
+  - Ingredient_06: {fileID: 7274684631967593192, guid: 5592ce583bf800242998f1508bc8f67d,
+      type: 3}
+  - Ingredient_07: {fileID: 4099945514551284534, guid: 658001b3a097242459883351b8e033c0,
+      type: 3}
+  - Ingredient_08: {fileID: 8251586532818729448, guid: 62dc35faece213e49ab42a2e02de9c75,
+      type: 3}
+  - Ingredient_09: {fileID: 6877828909714261088, guid: 135f570f028a6b34a831668bc4e94340,
+      type: 3}
+  - Ingredient_10: {fileID: 3749832560839434239, guid: e9c616c0c3bf7e1448d362c1542ff36a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
