@@ -14,6 +14,7 @@ TagManager:
   - Ingredient_Cristaux
   - Ingredient_PotionVerte
   - Ingredient_PotionViolette
+  - Musique
   layers:
   - Default
   - TransparentFX

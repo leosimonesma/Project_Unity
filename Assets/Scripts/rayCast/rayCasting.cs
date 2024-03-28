@@ -2,11 +2,13 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class rayCasting : MonoBehaviour
 {
     string[] ingredientTags = { "Ingredient_Burrito", "Ingredient_Champi", "Ingredient_Poussiere", "Ingredient_DentDrake", "Ingredient_CoeurGolem", "Ingredient_OeilCyclope", "Ingredient_Sablier", "Ingredient_Cristaux", "Ingredient_PotionVerte", "Ingredient_PotionViolette" };
     private SRP_Inventory Inventory_system;
+    [SerializeField] AudioSource sound;
 
     private void Start() {
         Inventory_system = this.GetComponent<SRP_Inventory>();
@@ -28,6 +30,7 @@ public class rayCasting : MonoBehaviour
             {
                 hit.collider.gameObject.SetActive(false);       // Désactiver l'objet ayant le Tag Ingrediant et après avoir cliqué sur clic gauche
                 Inventory_system.inv_call(hit.transform.tag);
+                sound.Play();
                 Debug.Log("Ingrediant Detruit ! c'etait un : " + hit.transform.tag);
             }
         }
