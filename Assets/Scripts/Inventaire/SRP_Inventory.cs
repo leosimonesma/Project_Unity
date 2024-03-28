@@ -10,6 +10,7 @@ public class SRP_Inventory : MonoBehaviour
 {
 
     [SerializeField] int Score = 0;
+    public int Score1 ;
 
     [SerializeField] int[] Ingredient_Inventory = new int[5];
 
@@ -29,6 +30,7 @@ public class SRP_Inventory : MonoBehaviour
     }
 
     private void Update() {
+        Score1 = Score;
 
         if (Input.GetKeyDown(KeyCode.Keypad1)){
 

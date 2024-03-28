@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000 points
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1cef2420f1fd86449c9827310f07d49, type: 2}
   m_sharedMaterial: {fileID: -5020784902403668669, guid: a1cef2420f1fd86449c9827310f07d49,
@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreMenuUI: {fileID: 6166513368096508656}
+  ScoreAffichage: {fileID: 0}
+  AffichageScore: {fileID: 6001122003001022862}
 --- !u!1 &5999393022925298431
 GameObject:
   m_ObjectHideFlags: 0
