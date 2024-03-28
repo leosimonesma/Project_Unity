@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -23,10 +24,18 @@ public class SRP_Inventory : MonoBehaviour
 
     string[] ingredientTags = { "Ingredient_Burrito", "Ingredient_Champi", "Ingredient_Poussiere", "Ingredient_DentDrake", "Ingredient_CoeurGolem", "Ingredient_OeilCyclope", "Ingredient_Sablier", "Ingredient_Cristaux", "Ingredient_PotionVerte", "Ingredient_PotionViolette" };
 
+    [SerializeField] TextMeshProUGUI Text_combo_1;
+    [SerializeField] TextMeshProUGUI Text_combo_2;
+    [SerializeField] TextMeshProUGUI Text_combo_3;
+    [SerializeField] TextMeshProUGUI Text_combo_4;
+    [SerializeField] TextMeshProUGUI Text_combo_5;
+    [SerializeField] TextMeshProUGUI Text_combo_6;
+
     private void Start() {
 
         Inv_Reset(Ingredient_Inventory);
         SuperCombo_All_Reset(SuperCombo_1,SuperCombo_2,SuperCombo_3,SuperCombo_4,SuperCombo_5,SuperCombo_6);
+        Grimoire_Start();
     }
 
     private void Update() {
@@ -55,6 +64,68 @@ public class SRP_Inventory : MonoBehaviour
 
             Debug.Log("Super combo = " + Inv_SuperCombo_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6));
         }
+    }
+
+    public void Grimoire_Start() {
+
+        Text_combo_1.text = "1." + Grimoire_Id_To_Texte(SuperCombo_1,0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_1, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_1, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_1, 3) + " 5." +Grimoire_Id_To_Texte(SuperCombo_1, 4) ;
+        Text_combo_2.text = "1." + Grimoire_Id_To_Texte(SuperCombo_2, 0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_2, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_2, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_2, 3) + " 5." + Grimoire_Id_To_Texte(SuperCombo_2, 4);
+        Text_combo_3.text = "1." + Grimoire_Id_To_Texte(SuperCombo_3, 0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_3, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_3, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_3, 3) + " 5." + Grimoire_Id_To_Texte(SuperCombo_3, 4);
+        Text_combo_4.text = "1." + Grimoire_Id_To_Texte(SuperCombo_4, 0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_4, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_4, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_4, 3) + " 5." + Grimoire_Id_To_Texte(SuperCombo_4, 4);
+        Text_combo_5.text = "1." + Grimoire_Id_To_Texte(SuperCombo_5, 0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_5, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_5, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_5, 3) + " 5." + Grimoire_Id_To_Texte(SuperCombo_5, 4);
+        Text_combo_6.text = "1." + Grimoire_Id_To_Texte(SuperCombo_6, 0) + " 2." + Grimoire_Id_To_Texte(SuperCombo_6, 1) + " 3." + Grimoire_Id_To_Texte(SuperCombo_6, 2) + " 4." + Grimoire_Id_To_Texte(SuperCombo_6, 3) + " 5." + Grimoire_Id_To_Texte(SuperCombo_6, 4);
+
+    }
+
+    public string Grimoire_Id_To_Texte(int[] set, int id) {
+
+        string _return = "";
+
+        switch (set[id]-1) {
+            
+            case 0:
+                _return = "Lambas";
+            break;
+
+            case 1:
+                _return = "Champi Suspect";
+            break;
+
+            case 2:
+                _return = "Poussiere de Fee";
+            break;
+
+            case 3:
+                _return = "Cros de Dragon";
+            break;
+
+            case 4:
+                _return = "Coeur de Golem";
+            break;
+
+            case 5:
+                _return = "Oeil de Cyclop";
+            break;
+
+            case 6:
+                _return = "Sablier Eternel";
+            break;
+
+            case 7:
+                _return = "Cristaux De Sang";
+            break;
+
+            case 8:
+                _return = "Bave De Crepaux";
+            break;
+
+            case 9:
+                _return = "Essence de harpie";
+            break;
+
+        }
+        
+        return _return;
     }
 
     public void SuperCombo_All_Reset(int[] SuperCombo1, int[] SuperCombo2, int[] SuperCombo3, int[] SuperCombo4, int[] SuperCombo5, int[] SuperCombo6) {
