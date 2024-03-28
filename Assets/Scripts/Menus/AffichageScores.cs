@@ -29,4 +29,5 @@ public class AffichageScores : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("SCN_MainMenu");
     }
+
 }

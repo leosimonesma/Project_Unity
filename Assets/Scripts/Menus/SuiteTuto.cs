@@ -11,6 +11,7 @@ public class SuiteTuto : MonoBehaviour
     public GameObject tuto_02UI;
     public GameObject tuto_03UI;
     public GameObject tuto_04UI;
+    public GameObject tuto_05UI;
 
 
     // Update is called once per frame
@@ -33,6 +34,11 @@ public class SuiteTuto : MonoBehaviour
     {
         tuto_04UI.SetActive(true);
         tuto_03UI.SetActive(false);
+    }
+    public void Tuto05()
+    {
+        tuto_05UI.SetActive(true);
+        tuto_04UI.SetActive(false);
     }
     public void StartingGame()
     {

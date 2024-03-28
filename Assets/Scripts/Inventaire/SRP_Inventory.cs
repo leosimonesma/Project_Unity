@@ -30,7 +30,8 @@ public class SRP_Inventory : MonoBehaviour
     }
 
     private void Update() {
-        Score1 = Score;
+        Inv_Check(Ingredient_Inventory, SuperCombo_1, SuperCombo_2, SuperCombo_3, SuperCombo_4, SuperCombo_5, SuperCombo_6);
+       Score1 = Score;
 
         if (Input.GetKeyDown(KeyCode.Keypad1)){
 

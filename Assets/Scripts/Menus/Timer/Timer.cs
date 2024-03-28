@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
     public AffichageScores AffichageScores;
     bool stopTime = false;
     public GameObject TimerUI;
+    public SRP_Inventory ScoreAffichageInGame;
+    [SerializeField] TextMeshProUGUI AffichageScoreInGame;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class Timer : MonoBehaviour
     {
         FreezTime();
         timer();
-
+        AffichageScoreInGame.text = ScoreAffichageInGame.Score1.ToString();
     }
     void timer()
     {
@@ -70,6 +72,8 @@ public class Timer : MonoBehaviour
     {
         AffichageScores.Affichage_Scores();
         TimerUI.SetActive(false);
+        Time.timeScale = 0f;
 
     }
+
 }
