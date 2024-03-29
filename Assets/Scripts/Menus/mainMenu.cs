@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
+    public static bool GameIsPaused = false;
+
+
+    private void Awake()
+    {
+        GameIsPaused = false;
+        Time.timeScale = 1f;
+    }
     public void ButtonPlay()
     {
         SceneManager.LoadScene("SCN_InGame");

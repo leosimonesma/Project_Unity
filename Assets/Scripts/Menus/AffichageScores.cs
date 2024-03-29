@@ -26,6 +26,7 @@ public class AffichageScores : MonoBehaviour
     }
     public void LoadMenu()
     {
+        GameIsPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("SCN_MainMenu");
     }
